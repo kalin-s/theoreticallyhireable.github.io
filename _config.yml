@@ -4,8 +4,8 @@ url: "https://yourusername.github.io"   # replace yourusername
 baseurl: ""                              # leave empty for user.github.io pages
 language: "en"
 
-# permalink style: a dated essay feel
-permalink: /:year/:month/:day/:title/
+# Theme
+remote_theme: pages-themes/minimal@latest
 
 # Plugins supported by GitHub Pages
 plugins:
@@ -15,20 +15,20 @@ plugins:
 markdown: kramdown
 highlighter: rouge
 
-# Make posts output as standalone pages
+# Custom collection for freeform essays
 collections:
-  posts:
+  essays:
     output: true
-    permalink: /:title/
+    permalink: /essays/:title/
 
-# Ensure Jekyll includes your assets folder
+# Include assets folder
 include:
   - assets
 
-# Defaults so you don't need front-matter layout on every post
+# Default layout for essays
 defaults:
   - scope:
       path: ""
-      type: "posts"
+      type: "essays"
     values:
-      layout: "post"
+      layout: "essay"
