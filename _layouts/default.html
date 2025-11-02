@@ -4,16 +4,27 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ page.title | default: site.title }}</title>
     <meta name="description" content="{{ page.excerpt | strip_html | truncate: 160 | default: site.description }}">
     {%- seo -%}
-    <link rel="stylesheet" href="/theoreticallyhireable/assets/css/style.css">
+
+    <!-- Test inline style to verify CSS is working -->
+    <style>
+      body { background: #111 !important; color: #eee !important; }
+    </style>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
   </head>
   <body>
     <div class="container">
       <header>
-        <h1><a href="{{ '/theoreticallyhireable/' | relative_url }}" style="color:inherit; text-decoration:none">{{ site.title }}</a></h1>
+        <h1>
+          <a href="{{ site.baseurl }}/" style="color:inherit; text-decoration:none">
+            {{ site.title }}
+          </a>
+        </h1>
         <p class="post-meta">{{ site.description }}</p>
       </header>
 
